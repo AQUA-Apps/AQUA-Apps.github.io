@@ -11,7 +11,7 @@
                 colorLight: "#6AB8F7",
                 colorDark: "#064271",
                 description: 'HUDdle: Head Up Display for all cars. Information on your windshield',
-                fullDescription: 'HUDdle is an app to put a digital Head Up Display (HUD) in any car: new or old.<br><br>Features:<ul><li>Fully customisable modular layout</li><li>Multiple modules (see below for current list)</li><li>Navigation detection notification</li></ul>Available Modules:<ul><li>Altimeter</li><li>Clock</li><li>Navigation distance<sup class="legal-sup">1</sup></li><li>Navigation icon<sup class="legal-sup">1</sup></li><li>Speedometer (digital)</li></ul>Annual subscription includes:<ol><li>Removes all ads</li><li>Removes 3 custom layout limit</li></ol>',
+                fullDescription: 'HUDdle is an app to put a digital Head Up Display (HUD) in any car: new or old.<br><br>Features:<ul><li>Fully customisable modular layout</li><li>Multiple modules (see below for current list)</li><li>Navigation detection notification</li></ul>Available Modules:<ul><li>Altimeter</li><li>Clock</li><li>Navigation distance<sup class="legal-sup">1</sup></li><li>Navigation icon<sup class="legal-sup">1</sup></li><li>Speedometer (digital)</li></ul>Subscription includes:<ol><li>Removes all ads</li><li>Removes 3 custom layout limit</li></ol>',
                 legal: '<sup class="legal-sup">1</sup> Requires a compatible navigation app. See in-app for a list',
                 google: 'https://play.google.com/store/apps/details?id=co.aquaapps.huddle',
                 amazon: ''
