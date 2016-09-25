@@ -51,7 +51,7 @@
         <md-list class="no-margin no-padding" ng-controller="AppController as ac" ng-cloak>
             <md-list-item ng-repeat="a in ac.apps" ng-style="{ 'background-color':a.colorDark }">
                 <div class="app-info full-width" layout="column" layout-align="center center">
-                    <h1 class="app-name">{{ a.name }}</h1>
+                    <h1 class="app-name" ng-bind-html="a.name"></h1>
                     <md-icon class="app-icon" md-svg-icon="images/vector/{{ a.icon }}.svg"></md-icon>
                     <div>
                         <div class="app-desc" ng-bind-html="a.fullDescription"></div>

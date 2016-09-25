@@ -5,7 +5,7 @@
     function AppService($q) {
         var apps = [
             {
-                name: 'HUDdle',
+                name: 'HUDdle<sup class="legal-sup">BETA</sup>',
                 icon: 'ic-huddle',
                 color: "#2196F3",
                 colorLight: "#6AB8F7",
