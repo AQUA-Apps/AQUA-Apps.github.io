@@ -15,6 +15,7 @@ angular.module('AQUA Apps', ['ngMaterial', 'ngSanitize', 'apps'])
             templateUrl: './res/legal/' + (isPrivacy ? 'privacy' : 'tos') + '.html',
             openFrom: angular.element(isPrivacy ? btnPrivacy : btnTerms), closeTo: angular.element(isPrivacy ? btnPrivacy : btnTerms), parent: angular.element(document.body), clickOutsideToClose: true, controller: DialogController
         });
+        legalClick(isPrivacy);
     };
 });
 
@@ -28,3 +29,8 @@ angular.element(document).ready(function () {
     if (window.location.search.substring(1) == "privacy") globalScope.showLegal(true);
     else if (window.location.search.substring(1) == "tos") globalScope.showLegal(false);
 });
+
+function socialClick(name) { ga('send', 'event', 'Social', 'click', name); }
+function devClick(storeName) { ga('send', 'event', 'Developer', 'click', storeName); }
+function appClick(storeName) { ga('send', 'event', 'App', 'click', storeName); }
+function legalClick(isPrivacy) { ga('send', 'event', 'Legal', 'click', (isPrivacy ? 'Privacy' : 'Terms of Service')); }

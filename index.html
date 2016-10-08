@@ -43,8 +43,8 @@
                 <img class="promo-logo nodrag" src="images/logo-aquaapps.png" />
             </div>
             <div class="dev-btns" layout="row" layout-xs="column" layout-sm="column">
-                <md-button class="md-raised dev-btn nodrag" id="btn-google" href="https://play.google.com/store/apps/dev?id=7898762683025002793" target="_blank"><b>Find us on Google Play™</b></md-button>
-                <md-button class="md-raised dev-btn nodrag" id="btn-amazon" md-theme="social" href="http://www.amazon.com/s/ref=bl_sr_mobile-apps?field-brandtextbin=AQUA%20Apps&node=2350149011" target="_blank"><b>Find us on Amazon</b></md-button>
+                <md-button onclick="devClick('Google Play')" class="md-raised dev-btn nodrag" id="btn-google" href="https://play.google.com/store/apps/dev?id=7898762683025002793" target="_blank"><b>Find us on Google Play™</b></md-button>
+                <md-button onclick="devClick('Amazon')" class="md-raised dev-btn nodrag" id="btn-amazon" md-theme="social" href="http://www.amazon.com/s/ref=bl_sr_mobile-apps?field-brandtextbin=AQUA%20Apps&node=2350149011" target="_blank"><b>Find us on Amazon</b></md-button>
             </div>
         </div>
 
@@ -58,8 +58,8 @@
                         <span class="app-legal" ng-bind-html="a.legal"></span>
                     </div>
                     <div class="dev-btns" layout="row" layout-xs="column" layout-sm="column" layout-align="center center">
-                        <a class="nodrag" href="{{ a.google }}&referrer=aquaapps" ng-hide="a.google == ''" target="_blank"><img class="nodrag google-badge" alt="Get it on Google Play" src="images/badge-google.png" /></a>
-                        <a class="nodrag" href="{{ a.amazon }}" ng-hide="a.amazon == ''" target="_blank"><img class="nodrag amazon-badge" alt="Available at Amazon" src="images/badge-amazon.png" /></a>
+                        <a onclick="appClick('Google Play')" class="nodrag" href="{{ a.google }}&referrer=aquaapps" ng-hide="a.google == ''" target="_blank"><img class="nodrag google-badge" alt="Get it on Google Play" src="images/badge-google.png" /></a>
+                        <a onclick="appClick('Amazon')" class="nodrag" href="{{ a.amazon }}" ng-hide="a.amazon == ''" target="_blank"><img class="nodrag amazon-badge" alt="Available at Amazon" src="images/badge-amazon.png" /></a>
                     </div>
                 </div>
             </md-list-item>
@@ -78,36 +78,36 @@
                 </form>
             </div>
             <div class="social-icons" layout="row" layout-align="center center">
-                <md-button class="md-fab md-accent nodrag" target="_blank" href="https://twitter.com/AQUAapps" aria-label="Twitter">
+                <md-button onclick="socialClick('Twitter')" class="md-fab md-accent nodrag" target="_blank" href="https://twitter.com/AQUAapps" aria-label="Twitter">
                     <md-icon class="btn-social" md-svg-src="res/social/ic-twitter.svg"></md-icon>
                     <md-tooltip md-theme="social">Follow us on Twitter</md-tooltip>
                 </md-button>
-                <md-button class="md-fab md-accent nodrag" target="_blank" href="https://www.facebook.com/AQUAapps" aria-label="Facebook">
+                <md-button onclick="socialClick('Facebook')" class="md-fab md-accent nodrag" target="_blank" href="https://www.facebook.com/AQUAapps" aria-label="Facebook">
                     <md-icon class="btn-social" md-svg-src="res/social/ic-facebook.svg"></md-icon>
                     <md-tooltip md-theme="social">Like us on Facebook</md-tooltip>
                 </md-button>
-                <md-button class="md-fab md-accent nodrag" target="_blank" href="http://google.com/+AQUAapps" aria-label="Google Plus">
+                <md-button onclick="socialClick('Google+')" class="md-fab md-accent nodrag" target="_blank" href="http://google.com/+AQUAapps" aria-label="Google Plus">
                     <md-icon class="btn-social" md-svg-src="res/social/ic-google-plus.svg"></md-icon>
                     <md-tooltip md-theme="social">Follow us on Google+</md-tooltip>
                 </md-button>
-                <md-button class="md-fab md-accent nodrag" target="_blank" href="mailto:support@aquaapps.co" aria-label="Email">
+                <md-button onclick="socialClick('Email')" class="md-fab md-accent nodrag" target="_blank" href="mailto:support@aquaapps.co" aria-label="Email">
                     <md-icon class="btn-social" md-svg-src="res/social/ic-email.svg"></md-icon>
                     <md-tooltip md-theme="social">Send us an email</md-tooltip>
                 </md-button>
 
-                <!-- <md-button class="md-fab md-accent nodrag" target="_blank" href="https://www.youtube.com/c/AQUAapps" aria-label="YouTube">
+                <!-- <md-button onclick="socialClick('YouTube')" class="md-fab md-accent nodrag" target="_blank" href="https://www.youtube.com/c/AQUAapps" aria-label="YouTube">
                     <md-icon class="btn-social" md-svg-src="res/social/ic-youtube.svg"></md-icon>
                     <md-tooltip md-theme="social">Subscribe on YouTube</md-tooltip>
                 </md-button>
-                <md-button class="md-fab md-accent nodrag" target="_blank" href="" aria-label="Github">
+                <md-button onclick="socialClick('GitHub')" class="md-fab md-accent nodrag" target="_blank" href="" aria-label="Github">
                     <md-icon class="btn-social" md-svg-src="res/social/ic-github.svg"></md-icon>
                     <md-tooltip md-theme="social">Follow us on GitHub</md-tooltip>
                 </md-button>
-                <md-button class="md-fab md-accent nodrag" target="_blank" href="" aria-label="LinkedIn">
+                <md-button onclick="socialClick('LinkedIn')" class="md-fab md-accent nodrag" target="_blank" href="" aria-label="LinkedIn">
                     <md-icon class="btn-social" md-svg-src="res/social/ic-linkedin.svg"></md-icon>
                     <md-tooltip md-theme="social">Add us on LinkedIn</md-tooltip>
                 </md-button>
-                <md-button class="md-fab md-accent nodrag" target="_blank" href="" aria-label="Instagram">
+                <md-button onclick="socialClick('Instagram')" class="md-fab md-accent nodrag" target="_blank" href="" aria-label="Instagram">
                     <md-icon class="btn-social" md-svg-src="res/social/ic-instagram.svg"></md-icon>
                     <md-tooltip md-theme="social">Follow us on Instagram</md-tooltip>
                 </md-button> -->
@@ -138,6 +138,7 @@
         <script src="src/apps/Apps.js"></script>
         <script src="src/apps/AppController.js"></script>
         <script src="src/apps/AppService.js"></script>
+        <script src="src/analytics.js"></script>
         <script src="src/main.js"></script>
     </body>
 </html>
