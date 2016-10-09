@@ -50,13 +50,13 @@
 
         <div class="api-documentation-section">
             <pre><code class="language-java">
-                Intent huddleIntent = new Intent(HuddleApi.HUDDLE_API);
-                huddleIntent.putStringExtra(HuddleApi.KEY_ETA_TIME, "8:52"); // Always use 12 hour time
-                huddleIntent.putStringExtra(HuddleApi.KEY_ETA_AMPM, "pm"); // "am" or "pm"
-                huddleIntent.putLongExtra(HuddleApi.KEY_DISTANCE, 80); // Always in metres
-                huddleIntent.putLongExtra(HuddleApi.KEY_REMAINING_DISTANCE, 1000); // Always in metres
-                huddleIntent.putLongExtra(HuddleApi.KEY_REMAINING_TIME, 60); // Always in seconds
-                huddleIntent.putIntExtra(HuddleApi.KEY_ICON, HuddleApi.DIRECTION_ROUNDABOUT_6_FLIPPED);
+                Intent huddleIntent = new Intent(HuddleApi.HUDDLE_API_INTENT);
+                huddleIntent.putExtra(HuddleApi.KEY_ETA_TIME, "8:52"); // Always use 12 hour time
+                huddleIntent.putExtra(HuddleApi.KEY_ETA_AMPM, "pm"); // "am" or "pm"
+                huddleIntent.putExtra(HuddleApi.KEY_DISTANCE, 80); // Always in metres
+                huddleIntent.putExtra(HuddleApi.KEY_REMAINING_DISTANCE, 1000); // Always in metres
+                huddleIntent.putExtra(HuddleApi.KEY_REMAINING_TIME, 60); // Always in seconds
+                huddleIntent.putExtra(HuddleApi.KEY_ICON, HuddleApi.DIRECTION_ROUNDABOUT_6_FLIPPED);
                 sendBroadcast(huddleIntent);
             </code></pre>
         </div>
