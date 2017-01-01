@@ -44,25 +44,63 @@
             <h3 class="api-text-center">Are you a developer of a navigation app?</h3>
             <h3 class="api-text-center">Use the HUDdle API to allow your users to access a head-up display</h3>
             <p class="api-text-center">Email <a href="mailto:support@aquaapps.co">support@aquaapps.co</a> to add your app to our "Suported Apps" list</p>
-            <md-button class="md-raised dev-btn nodrag" href="res/HuddleApi.zip" target="_blank" download="HuddleApi.zip">Download Huddle API (45 KB)</md-button>
-            <h2 class="api-text-center">Example</h2>
+            <h2 class="api-text-center">Download - Gradle</h2>
+            <a class="nodrag" style="margin-top:8px;" href='https://bintray.com/aqua-apps/HUDdle-API/co.aquaapps.huddle.api/_latestVersion' target="_blank"><img src='https://api.bintray.com/packages/aqua-apps/HUDdle-API/co.aquaapps.huddle.api/images/download.svg'></a>
         </div>
 
         <div class="api-documentation-section">
             <pre><code class="language-java">
-                Intent huddleIntent = new Intent(HuddleApi.HUDDLE_API_INTENT);
-                huddleIntent.putExtra(HuddleApi.KEY_ETA_TIME, "8:52"); // Always use 12 hour time
-                huddleIntent.putExtra(HuddleApi.KEY_ETA_AMPM, "pm"); // "am" or "pm"
-                huddleIntent.putExtra(HuddleApi.KEY_DISTANCE, 80); // Always in metres
-                huddleIntent.putExtra(HuddleApi.KEY_REMAINING_DISTANCE, 1000); // Always in metres
-                huddleIntent.putExtra(HuddleApi.KEY_REMAINING_TIME, 60); // Always in seconds
-                huddleIntent.putExtra(HuddleApi.KEY_ICON, HuddleApi.DIRECTION_ROUNDABOUT_6_FLIPPED);
-                sendBroadcast(huddleIntent);
+                repositories {
+                    jcenter()
+                }
+
+                dependencies {
+                    compile 'co.aquaapps.huddle.api:api:0.2.0'
+                }
+            </code></pre>
+            <h2 class="nodrag api-text-center">Example</h2>
+            <pre><code class="language-java">
+                // Update Estimated Time of Arrival
+                HuddleApi.updateEta(context, "8:52", HuddleApi.TIME_PM);
+
+                // Update next direction. Distance is in meters
+                HuddleApi.updateNextDirection(context, 80, HuddleApi.DIRECTION_ROUNDABOUT_6_FLIPPED);
+
+                // Update remaining distance (in meters) and time (in seconds)
+                HuddleApi.updateRemaining(context, 1200, 240);
+
+                // Or all together:
+                HuddleApi.updateDirection(context,
+                    "8:52", HuddleApi.TIME_PM,
+                    80, HuddleApi.DIRECTION_ROUNDABOUT_6_FLIPPED,
+                    1200, 240
+                );
+
+                // Custom group of information (see below for available fields):
+                Intent intent = new Intent(HuddleApi.HUDDLE_API_INTENT);
+                intent.putExtra(HuddleApi.KEY_ICON, HuddleApi.DIRECTION_TURN_LEFT);
+                intent.putExtra(HuddleApi.KEY_REMAINING_DISTANCE, 1200L);
+                intent.putExtra(HuddleApi.KEY_REMAINING_TIME, 60L);
+                intent.putExtra(HuddleApi.KEY_SPEED_LIMIT, 50L);
+                context.sendBroadcast(intent);
+            </code></pre>
+            <h2 class="nodrag api-text-center">Available Fields</h2>
+            <pre><code class="language-java">
+                KEY_ICON                // Integer  Next direction icon (e.g. HuddleApi.DIRECTION_UNKNOWN)
+                KEY_DISTANCE            // Long     Distance to next direction in METERS (e.g. 100)
+                KEY_REMAINING_DISTANCE  // Long     Total remaining distance in METERS (e.g. 1200)
+                KEY_REMAINING_TIME      // Long     Total remaining time in SECONDS (e.g. 600)
+                KEY_SPEED_LIMIT         // Long     Current speed limit in KPH (e.g. 100)
+                KEY_ETA_TIME            // String   Estimated time of arrival (e.g. "8:52")
+                KEY_ETA_AMPM            // String   Estimated time of arrival AM/PM (e.g. HuddleApi.TIME_AM)
+                KEY_CURRENT_STREET      // String   Name of the current street
+                KEY_NEXT_STREET         // String   Name of the next street
             </code></pre>
         </div>
 
         <div class="nodrag api-sample-hud" layout="column" layout-align="center center">
-            <img src="images/huddle-api/sample.jpg" />
+            <md-button class="md-raised dev-btn nodrag" href="res/ApiIcons.zip" target="_blank" download="HuddleApi.zip">Download Icons (45 KB)</md-button>
+            <img class="nodrag" src="images/huddle-api/sample.jpg" />
         </div>
 
         <!-- ******************** Footer ******************** -->
