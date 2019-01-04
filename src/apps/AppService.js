@@ -51,18 +51,6 @@
                 legal: '',
                 google: 'https://play.google.com/store/apps/details?id=com.aqualabs.isquash',
                 amazon: ''
-            },
-            {
-                name: 'Triplanner',
-                icon: 'ic-triplanner',
-                color: "#1377BA",
-                colorLight: "#309FEA",
-                colorDark: "#0c4973",
-                description: 'Planning a holiday? Use Triplanner to plan everything. It\'s simple and fast!',
-                fullDescription: 'Planning a holiday? Use Triplanner to plan everything. It\'s simple and fast! Set the start time of the event, how long it will last, and the locations. See each day\'s overview at a glance, and just tap an event to see more detail.<br><br>Using Google\'s Material design, combined with an intuitive interface, this trip planner makes organizing your holiday fast, simple and painless.',
-                legal: '',
-                google: 'https://play.google.com/store/apps/details?id=com.aqualabs.triplanner',
-                amazon: 'http://www.amazon.com/AQUA-Apps-Triplanner/dp/B00QSWCMLE/'
             }
         ];
         return { loadAllApps : function() { return $q.when(apps); } };
